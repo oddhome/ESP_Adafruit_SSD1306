@@ -143,7 +143,7 @@ void Adafruit_SSD1306::begin(uint8_t vccstate, uint8_t i2caddr, bool reset) {
   _i2caddr = i2caddr;
     // I2C Init
 	ESP.wdtDisable();
-    Wire.begin();
+    Wire.begin(SDA_PIN, SLA_PIN);   //Add SDA = Pin3 Index 0,SCL Pin4 Index 2
 	Wire.setClock(450000); // maximum
 /*   if (reset) {
     // Setup reset pin direction (used by both SPI and I2C)  
